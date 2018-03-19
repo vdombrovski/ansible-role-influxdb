@@ -74,4 +74,11 @@ influxdb_ds:
 influxdb_conf_template: influxdb.conf.j2
 influxdb_conf_path: /etc/influxdb/influxdb.conf
 influxdb_service_name: influxdb
+
+influxdb_conf_max_compactions: 0
+influxdb_conf_cache_snapshot_memsize: 26214400
+influxdb_conf_fsync_delay: 0s
+influxdb_conf_max_queries: 0
+influxdb_conf_query_timeout: 0s
+influxdb_conf_write_timeout: 10s
 ...

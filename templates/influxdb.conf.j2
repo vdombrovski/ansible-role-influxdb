@@ -5,15 +5,22 @@
   # pprof-enabled = false
   # lease-duration = "1m0s"
 
+[coordinator]
+  write-timeout = {{ influxdb_conf_write_timeout }}
+  query-timeout = {{ influxdb_conf_query_timeout }}
+  max-concurrent-queries = {{ influxdb_conf_max_queries }}
+
 [data]
   enabled = true
   dir = "/var/lib/influxdb/data"
   wal-dir = "/var/lib/influxdb/wal"
   # wal-logging-enabled = true
+  wal-fsync-delay = {{ influxdb_conf_fsync_delay }}
   # trace-logging-enabled = false
   # query-log-enabled = false
   # cache-max-memory-size = 524288000
-  # cache-snapshot-memory-size = 26214400
+  cache-snapshot-memory-size = {{ influxdb_conf_cache_snapshot_memsize }}
+  max-concurrent-compactions = {{ influxdb_conf_max_compactions }}
   # cache-snapshot-write-cold-duration = "1h"
   # compact-min-file-count = 3
   # compact-full-write-cold-duration = "24h"
