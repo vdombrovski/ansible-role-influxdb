@@ -6,8 +6,8 @@
   # lease-duration = "1m0s"
 
 [coordinator]
-  write-timeout = {{ influxdb_conf_write_timeout }}
-  query-timeout = {{ influxdb_conf_query_timeout }}
+  write-timeout = "{{ influxdb_conf_write_timeout }}"
+  query-timeout = "{{ influxdb_conf_query_timeout }}"
   max-concurrent-queries = {{ influxdb_conf_max_queries }}
 
 [data]
@@ -15,7 +15,7 @@
   dir = "/var/lib/influxdb/data"
   wal-dir = "/var/lib/influxdb/wal"
   # wal-logging-enabled = true
-  wal-fsync-delay = {{ influxdb_conf_fsync_delay }}
+  wal-fsync-delay = "{{ influxdb_conf_fsync_delay }}"
   # trace-logging-enabled = false
   # query-log-enabled = false
   # cache-max-memory-size = 524288000
