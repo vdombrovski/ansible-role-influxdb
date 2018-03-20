@@ -93,7 +93,7 @@
       "{{ influxdb_ds | selectattr('state', 'match', '^present$') | list }}"
 
 - name: Setup grafana variables - reset
-  command: "{{influx_cli}} -database {{ influxdb_grafana_vars['db'] }} -execute 'delete from \"{{ influxdb_grafana_vars['dst'] }}\".\"ds_interval\"'"
+  command: "{{influx_cli}} -database {{ influxdb_grafana_vars['db'] }} -execute 'delete from ds_interval'"
   ignore_errors: true
 
 - name: Setup grafana variables - create
